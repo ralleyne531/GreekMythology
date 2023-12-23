@@ -12,7 +12,11 @@ setInterval(() =>{
 },60000);
 
 //two-dimensional array, where number keys each have a "text" value
-let messages = ["Message one", "Message two", "Message three,"];
+let messages = [
+    {god:'Aries', message: 'wise'},
+    {god:"Athena",message:"war"},
+    {god:"Apollo", message:"discovery"}
+]; // [{:}]
 
 //random selection through range of 'messages'
 let randomizer = Math.floor(Math.random() * messages.length);
@@ -26,7 +30,7 @@ setTimeout(() =>{
     process.stdin.on('keypress', function (ch, key) {
         if (key && key.name === 'm') {
             //logic for when the user presses 'm'
-            console.log(messages[randomizer],randomizer);
+            console.log(messages[randomizer].god + "\n" + messages[randomizer].message,randomizer);
             process.exit(); // Optional: exit the program after processing the keypress
         }
     });
